@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="venice_blue">#015D90</color>
+    <color name="seashell">#F0F0F0</color>
+    <color name="blue_green">#149DB7</color>
+    <color name="dune">#333333</color>
+    <color name="smokey_grey">#707070</color>
+    <color name="ash_grey">#BBBBBB</color>
+
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!--SoFit Colors-->
+    <color name="green">#617A55</color>
+    <color name="light_green">#A4D0A4</color>
+    <color name="cream">#F7E1AE</color>
+    <color name="light_cream">#FFF8D6</color>
+    <color name="grey">#757575</color>
+    <color name="red">#9E0000</color>
+</resources>

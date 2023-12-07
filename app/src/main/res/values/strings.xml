@@ -1,0 +1,136 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">RoadToFit</string>
+    <string name="app_name_short" translatable="false">SoFit</string>
+    <string name="app_logo">Logo Aplikasi</string>
+    <string name="team">C23-PS233</string>
+
+    <!--Welcome, Login & Register-->
+    <string name="login">Sign In</string>
+    <string name="tag_line">Discover your\nPerfect Body</string>
+    <string name="sign_in">Sign In</string>
+    <string name="register">Buat Akun</string>
+    <string name="back">Kembali</string>
+    <string name="imageRegister">Gambar Register</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="email_hint">contoh123@gmail.com</string>
+    <string name="password">Password</string>
+    <string name="password_hint" translatable="false">Minimal 8 Karakter</string>
+    <string name="password_konfirmasi" translatable="false">Konfirmasi Password</string>
+    <string name="password_konfirmasi_hint" translatable="false">Ketik Ulang Password</string>
+    <string name="intent_login" translatable="false">Sudah Memiliki Akun?</string>
+    <string name="title_register">Daftarkan akun anda dibawah ini</string>
+    <string name="imagelogin">Gambar Login</string>
+    <string name="title_login">Masuk dengan akun anda</string>
+    <string name="intent_regis">Belum Memiliki Akun?</string>
+    <string name="imageWelcome">Gambar Welcome</string>
+    <string name="descwelcome">Menuju BMI Yang Lebih Sehat Dimulai di Sini.</string> <!--Towards a Healthier BMI Starts Here.-->
+    <string name="akun_not_register">Maaf akun anda belum terdaftar</string>
+    <string name="password_not_match">Password anda tidak sama</string>
+    <string name="register_failed">Email sudah terdaftar. Registrasi gagal</string>
+    <string name="register_success">Registrasi berhasil</string>
+    <string name="required_field_username">Masukan username anda</string>
+    <string name="required_field_email">Masukan email anda dengan benar</string>
+    <string name="required_field_password">Masukan password anda minimal 8 karakter</string>
+    <string name="required_field_password_minimal">Password anda kurang dari 8 karakter</string>
+
+    <!--Home-->
+    <string name="hello">Hi,</string>
+    <string name="user_home">Anonymous</string>
+    <string name="edit_profil">Edit Profile</string>
+    <string name="pertanyaan">Ingin tahu berapa BMI mu?</string>
+    <string name="deskripsi">Silahkan lakukan test untuk mengetahui berapa BMI anda.</string>
+    <string name="start_test">Mulai Test</string>
+    <string name="desc_test">Jawab pertanyaan untuk mendapatkan hasil BMI anda.</string>
+    <string name="history_test">Riwayat Test</string>
+    <string name="desc_history">Hasil dari test yang pernah anda lakukan sebelumnya.</string>
+    <string name="body_type">Body Type</string>
+    <string name="arm_flex">Body Type</string>
+    <string name="spark_solid">Body Type</string>
+    <string name="find_body">Find Out Your Body Type</string>
+    <string name="diet_reco">Diet/Fitness Recommendation</string>
+
+    <!--Navigation-->
+    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="menu">Menu</string>
+    <string name="menu_test">Mulai Test</string>
+    <string name="menu_history">Riwayat</string>
+    <string name="menu_profile">Profil</string>
+    <string name="logout">Keluar</string>
+
+    <!--History-->
+    <string name="title_result">Hasil</string>
+    <string name="gender">Gender</string>
+    <string name="gender_hasil">Laki - laki </string>
+    <string name="height">Tinggi Badan</string>
+    <string name="height_hasil">170 cm</string>
+    <string name="weight">Berat Badan</string>
+    <string name="weight_hasil">60 kg</string>
+    <string name="bmi">BMI</string>
+    <string name="bmi_hasil">Ideal</string>
+    <string name="delete">Hapus</string>
+
+    <!--Profile-->
+    <string name="edit_profile">Ubah Profil</string>
+    <string name="imageProfile">Gambar Profile</string>
+    <string name="save">Simpan</string>
+
+    <!--Questions-->
+    <string name="title_questions">Kuisioner</string>
+    <string name="imageTinggi">Gambar Tinggi Badan</string>
+    <string name="imageBerat">Gambar Berat Badan</string>
+    <string name="imageGender">Gambar Jenis Kelamin</string>
+    <string name="title_questions1">Pertanyaan ke 1 dari 3</string>
+    <string name="title_questions2">Pertanyaan ke 2 dari 3</string>
+    <string name="title_questions3">Pertanyaan ke 3 dari 3</string>
+    <string name="question1">Apa jenis kelamin anda?</string>
+    <string name="question2">Berapa tinggi badan anda?</string>
+    <string name="question3">Berapa berat badan anda?</string>
+    <string name="men">Pria</string>
+    <string name="women">Wanita</string>
+    <string name="next">Lanjut</string>
+    <string name="tinggi_hint">Masukan tinggi anda disini</string>
+    <string name="berat_hint">Masukan berat anda disini</string>
+    <string name="cm">cm</string>
+    <string name="kg">kg</string>
+
+    <!--Result-->
+    <string name="rekomendasi">Rekomendasi</string>
+    <string name="rekomendasi_olahraga">Olahraga</string>
+    <string name="rekomendasi_makanan">Makanan</string>
+    <string name="deskripsi_olahraga">Olahraga ini dapat membantu mengurangi lemak di tubuh, dan mampu membuat  badan sehat.</string>
+    <string name="deskripsi_makanan">Memakan buah-buahan mampu meningkatkan kesehatan tubuh, merupakan sumber vitamin, dan Mencegah penyakit tertentu</string>
+    <string name="red">Merah</string>
+    <string name="orange">Orange</string>
+    <string name="yellow">Kuning</string>
+    <string name="dark_green">Hijau Tua</string>
+    <string name="light_green">Hijau Muda</string>
+    <string name="arrow">Panah</string>
+    <string name="hasil_bmi_angka">BMI anda Ideal</string>
+    <string name="hasil_bmi_keterangan">BMI anda Ideal, pertahankan</string>
+    <string name="extremely_weak">Berat badan anda sangat kurus</string>
+    <string name="weak">Berat badan anda kurus</string>
+    <string name="ideal">Berat badan anda ideal</string>
+    <string name="overweight">Berat badan anda berlebih</string>
+    <string name="obesity">Berat badan anda lumayan berlebih</string>
+    <string name="extreme_obesity">Berat badan anda sangat berlebih</string>
+    <string name="create_account">Create an RoadToFit Account</string>
+    <string name="sign_up">Don\'t have any account? Sign Up</string>
+    <string name="sign_in_">Already on RoadToFit? </string>
+    <string name="name">Name</string>
+    <string name="sign_up_btn">Sign Up</string>
+    <string name="sign_in_text">Sign In</string>
+    <string name="dummytext">Nikolaus Evan Dewanto</string>
+    <string name="dummy_gender">Male</string>
+    <string name="profile_data">Profile Data</string>
+    <string name="age">Age</string>
+    <string name="nothing">Nothing</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
