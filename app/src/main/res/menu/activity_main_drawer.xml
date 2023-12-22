@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_profile"
-            android:icon="@drawable/ic_user"
-            android:title="@string/menu_profile" />
-    </group>
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/menu_home"
+        android:title="Home"/>
 
+    <item
+        android:id="@+id/menu_classifier"
+        android:icon="@drawable/arm_flex"
+        android:title="Body Classifier" />
+
+    <item
+        android:id="@+id/menu_assistant"
+        android:icon="@drawable/spark_solid"
+        android:title="Diet Assistant" />
+
+
+    <item
+        android:id="@+id/menu_profile"
+        android:icon="@drawable/menu_profile"
+        android:title="Profile" />
 </menu>

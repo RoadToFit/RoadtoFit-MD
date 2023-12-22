@@ -8,12 +8,17 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.roadtofit.R
 import com.example.roadtofit.data.model.ViewModelFactory
 import com.example.roadtofit.databinding.ActivityRegisterBinding
 import com.example.roadtofit.ui.WelcomeActivity
+import com.example.roadtofit.ui.diet.DietActivity2
+import com.example.roadtofit.ui.diet.DietActivity3
+import com.google.android.material.textfield.MaterialAutoCompleteTextView
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -44,20 +49,18 @@ class RegisterActivity : AppCompatActivity() {
         val back = ObjectAnimator.ofFloat(binding.ivBack, View.ALPHA, 1f).setDuration(400)
         val name = ObjectAnimator.ofFloat(binding.tvName, View.ALPHA, 1f).setDuration(500)
         val editName = ObjectAnimator.ofFloat(binding.editName, View.ALPHA, 1f).setDuration(500)
-        val email = ObjectAnimator.ofFloat(binding.tvEmail, View.ALPHA, 1f).setDuration(500)
-        val editEmail = ObjectAnimator.ofFloat(binding.editEmail, View.ALPHA, 1f).setDuration(500)
+        val username = ObjectAnimator.ofFloat(binding.tvEmail, View.ALPHA, 1f).setDuration(500)
+        val editUsername = ObjectAnimator.ofFloat(binding.editEmail, View.ALPHA, 1f).setDuration(500)
         val password = ObjectAnimator.ofFloat(binding.tvPassword, View.ALPHA, 1f).setDuration(500)
         val editPassword = ObjectAnimator.ofFloat(binding.tlPassword, View.ALPHA, 1f).setDuration(500)
         val register = ObjectAnimator.ofFloat(binding.regisButton, View.ALPHA, 1f).setDuration(500)
         val login1 = ObjectAnimator.ofFloat(binding.tvLogin, View.ALPHA, 1f).setDuration(500)
         val login2 = ObjectAnimator.ofFloat(binding.tvLogin2, View.ALPHA, 1f).setDuration(500)
         val gend = ObjectAnimator.ofFloat(binding.gender, View.ALPHA, 1f).setDuration(500)
-        val male = ObjectAnimator.ofFloat(binding.male, View.ALPHA, 1f).setDuration(500)
-        val female = ObjectAnimator.ofFloat(binding.female, View.ALPHA, 1f).setDuration(500)
 
 
         val together = AnimatorSet().apply {
-            playTogether(name, editName, email, editEmail, password, editPassword, register, login1, login2, gend, male, female)
+            playTogether(name, editName, username, editUsername, password, editPassword, register, login1, login2, gend)
         }
 
         AnimatorSet().apply {
@@ -93,7 +96,20 @@ class RegisterActivity : AppCompatActivity() {
                 override fun afterTextChanged(s: Editable?) {}
             })
 
+            val autocompleteGender: MaterialAutoCompleteTextView? = findViewById(R.id.autocomplete_gender)
+
+            val genderOptions = arrayOf("MALE", "FEMALE")
+            val genderAdapter = ArrayAdapter(this@RegisterActivity, R.layout.dropdown_item, genderOptions)
+            autocompleteGender?.setAdapter(genderAdapter)
+
+
             regisButton.setOnClickListener {
+                val intent = Intent(this@RegisterActivity, DietActivity2::class.java)
+                if (autocompleteGender != null) {
+                    intent.putExtra("GENDER", autocompleteGender.text.toString())
+                }
+                startActivity(intent)
+
                 showLoading()
                 postText()
                 showToast()
@@ -144,19 +160,26 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun moveActivity() {
         registerViewModel.registerResponse.observe(this@RegisterActivity) { response ->
-            if (response.success) {
+            val message = response.message
+
+            if (!message.isNullOrBlank()) {
+                // Registration was successful, move to LoginActivity
                 startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
                 finish()
+            } else {
+
             }
         }
     }
 
+
     private fun postText() {
         binding.apply {
             registerViewModel.doRegister(
-                editName.text.toString(),
                 editEmail.text.toString(),
                 editPassword.text.toString(),
+                editName.text.toString(),
+                autocompleteGender.text.toString()
             )
         }
     }

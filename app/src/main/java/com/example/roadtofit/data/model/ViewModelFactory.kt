@@ -1,11 +1,14 @@
 package com.example.roadtofit.data.model
 
+
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.capstone.sofitapp.ui.result.DietViewModel
 import com.example.roadtofit.data.utils.Injection
 import com.example.roadtofit.ui.auth.LoginViewModel
 import com.example.roadtofit.ui.auth.RegisterViewModel
+import com.example.roadtofit.ui.body.BodyViewModel
 import com.example.roadtofit.ui.main.MainViewModel
 import com.example.roadtofit.ui.profile.ProfileViewModel
 
@@ -26,6 +29,12 @@ class ViewModelFactory(private val repo: UserPreference) : ViewModelProvider.New
             }
             modelClass.isAssignableFrom(ProfileViewModel::class.java) -> {
                 ProfileViewModel(repo) as T
+            }
+            modelClass.isAssignableFrom(BodyViewModel::class.java) -> {
+                BodyViewModel(repo) as T
+            }
+            modelClass.isAssignableFrom(DietViewModel::class.java) -> {
+                DietViewModel(repo) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }

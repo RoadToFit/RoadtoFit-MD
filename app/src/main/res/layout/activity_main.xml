@@ -15,32 +15,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:backgroundTint="@color/green"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_navigation"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
         app:menu="@menu/activity_main_drawer">
 
-        <TextView
-            android:id="@+id/navLogout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginStart="5dp"
-            android:padding="16dp"
-            android:drawablePadding="11dp"
-            android:fontFamily="@font/poppins_regular"
-            android:text="@string/logout"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:drawableLeftCompat="@drawable/ic_logout" />
+
 
     </com.google.android.material.navigation.NavigationView>
 

@@ -12,7 +12,10 @@ import com.example.roadtofit.R
 import com.example.roadtofit.data.model.ViewModelFactory
 import com.example.roadtofit.databinding.ActivityMainBinding
 import com.example.roadtofit.ui.WelcomeActivity
+import com.example.roadtofit.ui.body.BodyActivity
+import com.example.roadtofit.ui.diet.DietActivity
 import com.example.roadtofit.ui.profile.ProfileActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
 
@@ -29,59 +32,67 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.fabMenu)
+        bottomNavigationView.selectedItemId = R.id.menu_home
+
+
         setupUser()
         setupViewModel()
 
-        val drawerLayout: DrawerLayout = binding.drawerLayout
-        val navView: NavigationView = binding.navView
-
-        binding.homeActivity.btnNavigation.setOnClickListener {
-            drawerLayout.openDrawer(navView)
-        }
-
-        binding.navView.setNavigationItemSelectedListener {
-            when (it.itemId) {
-                R.id.nav_profile -> {
-                    val intent = Intent(this, ProfileActivity::class.java)
-                    startActivity(intent)
-                }
-            }
-            true
-        }
 
         binding.homeActivity.btnEdit.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
 
-        binding.navLogout.setOnClickListener {
-            startActivity(Intent(this, WelcomeActivity::class.java))
-            mainViewModel.logout()
+        binding.homeActivity.btnBody.setOnClickListener {
+            val intent = Intent(this, BodyActivity::class.java)
+            startActivity(intent)
         }
 
-        // Navigation Drawer Back Button
-        onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-                    drawerLayout.closeDrawer(GravityCompat.START)
-                    return
+        binding.homeActivity.btnDietFitness.setOnClickListener {
+            val intent = Intent(this, DietActivity::class.java)
+            startActivity(intent)
+        }
+
+
+            bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.menu_home -> {
+                    startActivity(Intent(this, MainActivity::class.java))
+                    true
                 }
-                finish()
+                R.id.menu_profile -> {
+                    startActivity(Intent(this, ProfileActivity::class.java))
+                    true
+                }
+                R.id.menu_classifier -> {
+                    startActivity(Intent(this, BodyActivity::class.java))
+                    true
+                }
+                R.id.menu_assistant -> {
+                    startActivity(Intent(this, DietActivity::class.java))
+                    true
+                }
+                else -> false
             }
-        })
+        }
+
+
     }
 
     private fun setupUser() {
         mainViewModel.getSession().observe(this@MainActivity) {
-            token = it.name
             if (!it.isLogin) {
                 moveActivity()
             }
             else {
                 val userName = it.name
                 binding.homeActivity.tvUser.text = userName
+
             }
         }
+
         showToast()
     }
 
@@ -105,12 +116,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    @Deprecated("Deprecated in Java")
-    override fun onBackPressed() {
-        val backIntent = Intent(Intent.ACTION_MAIN)
-        backIntent.addCategory(Intent.CATEGORY_HOME)
-        backIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-        startActivity(backIntent)
-    }
+//    @Deprecated("Deprecated in Java")
+//    override fun onBackPressed() {
+//        val backIntent = Intent(Intent.ACTION_MAIN)
+//        backIntent.addCategory(Intent.CATEGORY_HOME)
+//        backIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+//        startActivity(backIntent)
+//    }
 
 }

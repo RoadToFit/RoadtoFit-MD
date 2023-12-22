@@ -1,5 +1,7 @@
 package com.example.roadtofit.data.utils
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
@@ -14,8 +16,10 @@ class SessionPreferences private constructor(private val dataStore: DataStore<Pr
     fun getSession(): Flow<User> {
         return dataStore.data.map { preferences ->
             User(
+                preferences[USER_ID_KEY] ?:"",
                 preferences[NAME_KEY] ?: "",
                 preferences[TOKEN_KEY] ?: "",
+                preferences[GENDER_KEY] ?: "",
                 preferences[STATE_KEY] ?: false
             )
         }
@@ -23,21 +27,25 @@ class SessionPreferences private constructor(private val dataStore: DataStore<Pr
 
     suspend fun saveSession(session: User) {
         dataStore.edit { preferences ->
+            preferences[USER_ID_KEY] = session.userId
             preferences[NAME_KEY] = session.name
             preferences[TOKEN_KEY] = session.token
+            preferences[GENDER_KEY] = session.gender
             preferences[STATE_KEY] = session.isLogin
+
+            Log.d(TAG, "Saved token: ${session}")
         }
     }
 
-    suspend fun saveId(id: String) {
+    suspend fun saveId(userId: String) {
         dataStore.edit { preferences ->
-            preferences[ID_KEY] = id
+            preferences[USER_ID_KEY] = userId
         }
     }
 
     fun getId(): Flow<String> {
         return dataStore.data.map { preferences ->
-            preferences[ID_KEY] ?: ""
+            preferences[USER_ID_KEY] ?: ""
         }
     }
 
@@ -53,12 +61,22 @@ class SessionPreferences private constructor(private val dataStore: DataStore<Pr
         }
     }
 
+    fun getAccessToken(): Flow<String> {
+        return dataStore.data.map { preferences ->
+            val accessToken = preferences[TOKEN_KEY] ?: ""
+            // Log the retrieved token
+            Log.d(TAG, "Retrieved token: $accessToken")
+            accessToken
+        }
+    }
+
     companion object {
         @Volatile
         private var INSTANCE: SessionPreferences? = null
-        private val ID_KEY = stringPreferencesKey("id")
+        private val USER_ID_KEY = stringPreferencesKey("userId")
         private val NAME_KEY = stringPreferencesKey("name")
         private val TOKEN_KEY = stringPreferencesKey("token")
+        private val GENDER_KEY = stringPreferencesKey("gender")
         private val STATE_KEY = booleanPreferencesKey("state")
 
         fun getInstance(dataStore: DataStore<Preferences>): SessionPreferences {

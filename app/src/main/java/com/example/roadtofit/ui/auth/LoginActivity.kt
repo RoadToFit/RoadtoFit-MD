@@ -39,17 +39,19 @@ class LoginActivity : AppCompatActivity() {
 
     private fun playAnimation() {
         ObjectAnimator.ofFloat(binding.signIn, View.TRANSLATION_X, -30f, 30f).apply {
-            duration = 6000
+            duration = 5000
             repeatCount = ObjectAnimator.INFINITE
             repeatMode = ObjectAnimator.REVERSE
         }.start()
 
-        val back = ObjectAnimator.ofFloat(binding.back, View.ALPHA, 1f).setDuration(400)
-        val title1 = ObjectAnimator.ofFloat(binding.username, View.ALPHA, 1f).setDuration(400)
-        val title2 = ObjectAnimator.ofFloat(binding.usernameField, View.ALPHA, 1f).setDuration(400)
-        val email = ObjectAnimator.ofFloat(binding.password, View.ALPHA, 1f).setDuration(500)
-        val password = ObjectAnimator.ofFloat(binding.passwordField, View.ALPHA, 1f).setDuration(500)
-        val login = ObjectAnimator.ofFloat(binding.btnSignIn, View.ALPHA, 1f).setDuration(500)
+        val back = ObjectAnimator.ofFloat(binding.back, View.ALPHA, 1f).setDuration(100)
+        val judul1 = ObjectAnimator.ofFloat(binding.title1, View.ALPHA, 1f).setDuration(100)
+        val judul2 = ObjectAnimator.ofFloat(binding.title2, View.ALPHA, 1f).setDuration(100)
+        val title1 = ObjectAnimator.ofFloat(binding.signIn, View.ALPHA, 1f).setDuration(100)
+        val title2 = ObjectAnimator.ofFloat(binding.editEmail, View.ALPHA, 1f).setDuration(100)
+        val email = ObjectAnimator.ofFloat(binding.tlPassword, View.ALPHA, 1f).setDuration(100)
+        val password = ObjectAnimator.ofFloat(binding.btnSignIn, View.ALPHA, 1f).setDuration(100)
+        val login = ObjectAnimator.ofFloat(binding.btnSignUp, View.ALPHA, 1f).setDuration(100)
 
 
         val together = AnimatorSet().apply {
@@ -57,33 +59,33 @@ class LoginActivity : AppCompatActivity() {
         }
 
         AnimatorSet().apply {
-            playSequentially(back, title1, title2, together)
-            startDelay = 400
+            playSequentially(back, title1, title2, together,judul1, judul2)
+            startDelay = 200
         }.start()
     }
 
     private fun setupAction() {
         binding.apply {
-            if (usernameField.length() == 0 && passwordField.length() == 0) {
-                usernameField.error = getString(R.string.required_field_email)
-                passwordField.setError(getString(R.string.required_field_password), null)
+            if (editEmail.length() == 0 && editPassword.length() == 0) {
+                editEmail.error = getString(R.string.required_field_email)
+                editPassword.setError(getString(R.string.required_field_password), null)
                 btnSignIn.isEnabled = false
-            } else if (usernameField.length() != 0 && passwordField.length() != 0) {
+            } else if (editEmail.length() != 0 && editPassword.length() != 0) {
                 btnSignIn.isEnabled = true
             }
 
-            usernameField.addTextChangedListener(object : TextWatcher {
+            editEmail.addTextChangedListener(object : TextWatcher {
                 override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    btnSignIn.isEnabled = usernameField.text!!.isNotEmpty() && passwordField.text!!.isNotEmpty()
+                    btnSignIn.isEnabled = editEmail.text!!.isNotEmpty() && editPassword.text!!.isNotEmpty()
                 }
                 override fun afterTextChanged(s: Editable?) {}
             })
 
-            passwordField.addTextChangedListener(object : TextWatcher {
+            editPassword.addTextChangedListener(object : TextWatcher {
                 override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    btnSignIn.isEnabled = passwordField.length() >= 8
+                    btnSignIn.isEnabled = editPassword.length() >= 8
                 }
                 override fun afterTextChanged(s: Editable?) {}
             })
@@ -121,20 +123,22 @@ class LoginActivity : AppCompatActivity() {
     private fun postText() {
         binding.apply {
             loginViewModel.doLogin(
-                usernameField.text.toString(),
-                passwordField.text.toString()
+                editEmail.text.toString(),
+                editPassword.text.toString()
             )
         }
 
         loginViewModel.loginResponse.observe(this@LoginActivity) { response ->
             saveSession(
                 User(
-                    response.data?.name.toString(),
-                    response.data?.email.toString(),
+                    response.user?.gender.toString(),
+                    response.user?.name.toString(),
+                    response.token,
+                    response.user?.gender.toString(),
                     true
                 )
             )
-            loginViewModel.saveId(response.data?.id.toString())
+            loginViewModel.saveId(response.user?.userId.toString())
         }
     }
 

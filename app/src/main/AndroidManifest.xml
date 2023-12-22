@@ -2,7 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -28,6 +34,30 @@
             android:theme="@style/Theme.RoadToFit.NoActionBar" />
         <activity
             android:name=".ui.profile.ProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.RoadToFit.NoActionBar"/>
+        <activity
+            android:name=".ui.body.BodyActivity"
+            android:exported="false"
+            android:theme="@style/Theme.RoadToFit.NoActionBar"/>
+        <activity
+            android:name=".ui.body.BodyActivity2"
+            android:exported="false"
+            android:theme="@style/Theme.RoadToFit.NoActionBar"/>
+        <activity
+            android:name=".ui.diet.DietActivity"
+            android:exported="false"
+            android:theme="@style/Theme.RoadToFit.NoActionBar"/>
+        <activity
+            android:name=".ui.diet.DietActivity3"
+            android:exported="false"
+            android:theme="@style/Theme.RoadToFit.NoActionBar"/>
+        <activity
+            android:name=".ui.diet.DietActivity2"
+            android:exported="false"
+            android:theme="@style/Theme.RoadToFit.NoActionBar"/>
+        <activity
+            android:name=".ui.diet.DietActivity4"
             android:exported="false"
             android:theme="@style/Theme.RoadToFit.NoActionBar"/>
         <activity

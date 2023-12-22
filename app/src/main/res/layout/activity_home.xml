@@ -4,165 +4,300 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.MainActivity"
-    android:background="@color/white">
+    android:background="@color/white"
+    tools:context=".ui.main.MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:elevation="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvProfile"
-        style="@style/Margin"
-        android:layout_width="424dp"
-        android:layout_height="111dp"
-        android:backgroundTint="@color/venice_blue"
-        app:cardElevation="10dp"
-        app:contentPadding="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:layout_height="match_parent"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
-            tools:layout_editor_absoluteX="32dp">
-
-            <!-- Add ImageView for photo profile -->
-            <ImageView
-                android:id="@+id/ivProfile"
-                android:layout_width="52dp"
-                android:layout_height="43dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/white" />
-
-            <TextView
-                android:id="@+id/tvHello"
-                android:layout_width="31dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="17dp"
-                android:layout_marginEnd="8dp"
-                android:fontFamily="@font/poppins_regular"
-                android:text="@string/hello"
-                android:textColor="@color/white"
-                android:textSize="23sp"
-                app:layout_constraintEnd_toStartOf="@+id/btnEdit"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/ivProfile"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tvUser"
-                android:layout_width="203dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="17dp"
-                android:layout_marginEnd="8dp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="@string/user_home"
-                android:textColor="@color/white"
-                android:textSize="23sp"
-                app:layout_constraintEnd_toStartOf="@+id/btnEdit"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/ivProfile"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/btnEdit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="30dp"
-                android:contentDescription="@string/edit_profil"
-                app:layout_constraintBottom_toBottomOf="@+id/tvUser"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvProfile"
+                android:layout_width="435dp"
+                android:layout_height="226dp"
+                android:backgroundTint="@color/venice_blue"
+                app:cardElevation="10dp"
+                app:contentPadding="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/ic_edit"
-                app:tint="@color/white" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- Add ImageView for photo profile -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/ivProfile"
+                        android:layout_width="52dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="15dp"
+                        android:contentDescription="@string/foto_profil"
+                        android:src="@drawable/logo"
+                        app:tint="@color/white"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <TextView
+                        android:id="@+id/tvHello"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="@string/hello"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toEndOf="@+id/ivProfile"
+                        app:layout_constraintTop_toTopOf="@id/tvUser" />
+
+                    <TextView
+                        android:id="@+id/tvUser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="@string/user_home"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toEndOf="@+id/tvHello"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/member"
+                        android:textColor="@color/ash_grey"
+                        app:layout_constraintStart_toStartOf="@id/tvHello"
+                        app:layout_constraintTop_toBottomOf="@id/tvHello"
+                        app:layout_constraintBottom_toBottomOf="@id/ivProfile"
+                        />
+
+                    <ImageView
+                        android:id="@+id/btnEdit"
+                        android:layout_width="39dp"
+                        android:layout_height="39dp"
+                        android:layout_marginEnd="24dp"
+                        android:contentDescription="@string/edit_profil"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvHello"
+                        app:srcCompat="@drawable/ic_edit"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tvBody"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="32dp"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/body_type"
+                        android:textColor="@color/ash_grey"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivProfile" />
+
+                    <TextView
+                        android:id="@+id/tvBodyType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/body_type_classifier"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/tvHasil_bmi"
+                        app:layout_constraintStart_toStartOf="@+id/tvBody" />
+
+                    <TextView
+                        android:id="@+id/tvHasil_bmi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/tvHasil_bmi"
+                        android:textColor="@color/ash_grey"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/tvBodyType" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="@string/nominal_bmi"
+                        android:textColor="@color/white"
+                        app:layout_constraintStart_toEndOf="@+id/tvHasil_bmi"
+                        app:layout_constraintTop_toTopOf="@id/tvHasil_bmi" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+            <ImageButton
+                android:id="@+id/btnBody"
+                android:layout_width="58dp"
+                android:layout_height="59dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/circular_background"
+                android:contentDescription="@string/arm_flex"
+                android:scaleType="centerInside"
+                android:src="@drawable/arm_flex"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.305"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cvProfile" />
+
+            <ImageButton
+                android:id="@+id/btnDietFitness"
+                android:layout_width="58dp"
+                android:layout_height="59dp"
+                android:background="@drawable/circular_background"
+                android:contentDescription="@string/spark_solid"
+                android:scaleType="centerInside"
+                android:src="@drawable/spark_solid"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.671"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btnBody" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/tvBody_assist"
+                android:layout_width="102dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/find_body"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.275"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnBody"
+                app:layout_constraintVertical_bias="0.333" />
+
+            <TextView
+                android:id="@+id/tvDiet"
+                android:layout_width="101dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/diet_reco"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.693"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnDietFitness" />
+
+            <TextView
+                android:id="@+id/tvRekomendasiDiet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/body_type"
-                android:fontFamily="@font/inter_medium"
-                android:lineHeight="17sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/rekomendasi_diet"
+                android:textColor="@color/black"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ivProfile"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:layout_marginStart="16dp" />
+                app:layout_constraintTop_toBottomOf="@id/tvDiet" />
+
+            <Button
+                android:id="@+id/btnSelengkapnya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/inter_medium"
+                android:background="?android:attr/selectableItemBackground"
+                android:textAllCaps="false"
+                android:text="@string/selengkapnya"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvRekomendasiDiet" />
+
+            <include
+                android:layout_marginTop="10dp"
+                android:id="@+id/makanan"
+                layout="@layout/item_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvRekomendasiDiet" />
+
+            <TextView
+                android:id="@+id/tvRekomendasiFitness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/rekomendasii"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/makanan" />
+
+            <Button
+                android:id="@+id/btnSelengkapnya2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/inter_medium"
+                android:background="?android:attr/selectableItemBackground"
+                android:textAllCaps="false"
+                android:text="@string/selengkapnya"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/makanan" />
+
+            <include
+                layout="@layout/items_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.491"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvRekomendasiFitness" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="409dp"
+                android:layout_height="5dp"
+                android:layout_marginTop="8dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBody_assist" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="409dp"
+                android:layout_height="5dp"
+                android:background="?android:attr/listDivider"
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="568dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/makanan"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
-    </androidx.cardview.widget.CardView>
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="58dp"
-        android:layout_height="59dp"
-        android:background="@drawable/circular_background"
-        android:scaleType="centerInside"
-        android:src="@drawable/arm_flex"
-        android:contentDescription="@string/arm_flex"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/fabMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.305"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.254" />
-
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="58dp"
-        android:layout_height="59dp"
-        android:background="@drawable/circular_background"
-        android:contentDescription="@string/spark_solid"
-        android:scaleType="centerInside"
-        android:src="@drawable/spark_solid"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.671"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.254" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="102dp"
-        android:layout_height="36dp"
-        android:gravity="center"
-        android:text="@string/find_body"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.275"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.333" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="137dp"
-        android:layout_height="33dp"
-        android:gravity="center"
-        android:text="@string/diet_reco"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.726"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.332" />
-
-
+        app:menu="@menu/activity_main_drawer" />
 </androidx.constraintlayout.widget.ConstraintLayout>

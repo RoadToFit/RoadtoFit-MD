@@ -16,10 +16,6 @@ class MainViewModel(private val repo: UserPreference) : ViewModel() {
         return repo.getSession()
     }
 
-    fun logout() {
-        viewModelScope.launch {
-            repo.logout()
-        }
-    }
+
 
 }

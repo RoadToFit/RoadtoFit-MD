@@ -1,5 +1,7 @@
 package com.example.roadtofit.ui.auth
 
+import android.content.ContentValues
+import android.util.Log
 import androidx.lifecycle.*
 import com.example.roadtofit.data.model.User
 import com.example.roadtofit.data.model.UserPreference
@@ -14,16 +16,27 @@ class LoginViewModel(private val repo: UserPreference) : ViewModel() {
     val isLoading: LiveData<Boolean> = repo.isLoading
     val toastText: LiveData<Event<String>> = repo.toastText
 
-    fun doLogin(email: String, password: String) {
+    fun doLogin(username: String, password: String) {
         viewModelScope.launch {
-            repo.postLogin(email, password)
+            repo.postLogin(username, password)
         }
     }
 
     fun saveSession(session: User) {
         viewModelScope.launch {
             repo.saveSession(session)
+
+            Log.d(ContentValues.TAG, "Saved token: ${session.name}")
         }
+    }
+
+    fun saveUser(user: User) {
+        viewModelScope.launch {
+            repo.saveSession(User(user.userId,user.name, user.token,user.gender, user.isLogin))
+        }
+    }
+    fun getUser(): LiveData<User> {
+        return repo.getSession()
     }
 
     fun login() {
@@ -32,9 +45,9 @@ class LoginViewModel(private val repo: UserPreference) : ViewModel() {
         }
     }
 
-    fun saveId(id: String) {
+    fun saveId(userId: String) {
         viewModelScope.launch {
-            repo.saveId(id)
+            repo.saveId(userId)
         }
     }
 }

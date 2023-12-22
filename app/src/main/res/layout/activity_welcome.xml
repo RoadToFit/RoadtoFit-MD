@@ -9,26 +9,36 @@
     android:background="@color/white">
 
     <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/welcome"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-97dp" />
+
+    <ImageView
         android:id="@+id/logo"
-        android:layout_width="113dp"
-        android:layout_height="149dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="115dp"
+        android:layout_height="113dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_roadtofit" />
+        app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/tag_line"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/tag_line"
+        android:layout_marginTop="4dp"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textAlignment="center"
-        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo" />
 
@@ -41,36 +51,53 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tag_line">
 
-        <Button
-            android:id="@+id/btn_register"
-            android:layout_width="325sp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_corner"
-            android:fontFamily="@font/inter_bold"
-            android:text="@string/register"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/btn_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:width="325dp"
-            android:textAllCaps="false"
-            android:fontFamily="@font/inter_bold"
-            android:textColor="@color/black"
-            android:text="@string/sign_in"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            android:background="@drawable/rounded_corner_second"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_register" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="277dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="296dp"
+        android:fontFamily="@font/inter_bold"
+        android:gravity="center"
+        android:text="@string/tag_line"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tag_line" />
+
+    <Button
+        android:id="@+id/btn_register"
+        style="@style/Margin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="396dp"
+        android:backgroundTint="@color/venice_blue"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/register"
+        android:textColor="@color/seashell"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tag_line" />
+
+    <Button
+        android:id="@+id/btn_login"
+        style="@style/Margin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/white"
+        android:text="@string/sign_in"
+        android:fontFamily="@font/inter_bold"
+        android:textColor="@color/venice_blue"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_register" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -74,6 +74,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tl_password"
         android:layout_width="290dp"
+        android:fontFamily="@font/inter_medium"
+        android:hint="@string/password_hint"
         android:layout_height="wrap_content"
         android:background="@color/seashell"
         app:layout_constraintTop_toBottomOf="@+id/tv_password"
@@ -86,7 +88,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:ems="10"
-            android:hint="@string/password_hint"
             android:fontFamily="@font/inter_medium"
             android:inputType="textPassword"
             android:textSize="12sp"
@@ -127,23 +128,25 @@
         app:layout_constraintStart_toStartOf="@+id/ivBack"
         app:layout_constraintTop_toBottomOf="@id/edit_name" />
 
-        <RadioButton
-            android:id="@+id/male"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_gender"
+            android:layout_width="290dp"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:text="Male"
-            app:layout_constraintStart_toStartOf="@+id/tv_email"
-            app:layout_constraintTop_toBottomOf="@+id/gender" />
+            app:layout_constraintTop_toBottomOf="@+id/edit_name"
+            app:layout_constraintStart_toStartOf="@+id/tv_name"
+            android:layout_marginTop="10dp">
 
-        <RadioButton
-            android:id="@+id/female"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:text="Female"
-            app:layout_constraintStart_toStartOf="@+id/tv_email"
-            app:layout_constraintTop_toBottomOf="@+id/male" />
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/autocomplete_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/seashell"
+                android:fontFamily="@font/inter_medium"
+                android:hint="@string/gender"
+                android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/regisButton"
@@ -180,7 +183,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="72dp"
         android:alpha="1"
-        android:fontFamily="@font/inter_medium"
+        android:fontFamily="@font/inter_bold"
         android:text="@string/login"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/regisButton"
@@ -197,6 +200,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

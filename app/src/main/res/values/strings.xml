@@ -6,19 +6,17 @@
 
     <!--Welcome, Login & Register-->
     <string name="login">Sign In</string>
-    <string name="tag_line">Discover your\nPerfect Body</string>
+    <string name="tag_line">Discover your perfect body</string>
     <string name="sign_in">Sign In</string>
     <string name="register">Buat Akun</string>
-    <string name="back">Kembali</string>
+    <string name="back">Kembali ke Home</string>
+    <string name="ulang">Ulang</string>
     <string name="imageRegister">Gambar Register</string>
     <string name="username">Username</string>
     <string name="email">Email</string>
     <string name="email_hint">contoh123@gmail.com</string>
     <string name="password">Password</string>
-    <string name="password_hint" translatable="false">Minimal 8 Karakter</string>
-    <string name="password_konfirmasi" translatable="false">Konfirmasi Password</string>
-    <string name="password_konfirmasi_hint" translatable="false">Ketik Ulang Password</string>
-    <string name="intent_login" translatable="false">Sudah Memiliki Akun?</string>
+    <string name="password_hint">Minimal 8 karakter</string>
     <string name="title_register">Daftarkan akun anda dibawah ini</string>
     <string name="imagelogin">Gambar Login</string>
     <string name="title_login">Masuk dengan akun anda</string>
@@ -36,7 +34,7 @@
 
     <!--Home-->
     <string name="hello">Hi,</string>
-    <string name="user_home">Anonymous</string>
+    <string name="user_home">RoadToFit</string>
     <string name="edit_profil">Edit Profile</string>
     <string name="pertanyaan">Ingin tahu berapa BMI mu?</string>
     <string name="deskripsi">Silahkan lakukan test untuk mengetahui berapa BMI anda.</string>
@@ -44,11 +42,16 @@
     <string name="desc_test">Jawab pertanyaan untuk mendapatkan hasil BMI anda.</string>
     <string name="history_test">Riwayat Test</string>
     <string name="desc_history">Hasil dari test yang pernah anda lakukan sebelumnya.</string>
-    <string name="body_type">Body Type</string>
+    <string name="body_type">Tipe Badan</string>
     <string name="arm_flex">Body Type</string>
     <string name="spark_solid">Body Type</string>
-    <string name="find_body">Find Out Your Body Type</string>
-    <string name="diet_reco">Diet/Fitness Recommendation</string>
+    <string name="find_body">Cari Tahu Tipe Badanmu</string>
+    <string name="diet_reco">Peroleh Rekomendasi</string>
+    <string name="diet_assist">Diet/Fitness Assistant</string>
+    <string name="diet_card">Rekomendasi Diet</string>
+    <string name="exer_card">Rekomendasi Olahraga</string>
+    <string name="more">Selengkapnya</string>
+    <string name="jenis_badan">Ectomorph</string>
 
     <!--Navigation-->
     <string name="title_activity_navigation">NavigationActivity</string>
@@ -62,46 +65,80 @@
     <string name="menu_history">Riwayat</string>
     <string name="menu_profile">Profil</string>
     <string name="logout">Keluar</string>
+    <string name="next">Selanjutnya</string>
+    <string name="previous">Kembali</string>
 
     <!--History-->
     <string name="title_result">Hasil</string>
-    <string name="gender">Gender</string>
+    <string name="gender">Male</string>
     <string name="gender_hasil">Laki - laki </string>
     <string name="height">Tinggi Badan</string>
+    <string name="heights">170cm</string>
     <string name="height_hasil">170 cm</string>
     <string name="weight">Berat Badan</string>
+    <string name="weights">60kg</string>
     <string name="weight_hasil">60 kg</string>
     <string name="bmi">BMI</string>
     <string name="bmi_hasil">Ideal</string>
     <string name="delete">Hapus</string>
 
+
     <!--Profile-->
-    <string name="edit_profile">Ubah Profil</string>
+    <string name="edit_profile">Profile Data</string>
     <string name="imageProfile">Gambar Profile</string>
     <string name="save">Simpan</string>
+    <string name="age">Umur</string>
+    <string name="ages">17</string>
+
 
     <!--Questions-->
-    <string name="title_questions">Kuisioner</string>
-    <string name="imageTinggi">Gambar Tinggi Badan</string>
-    <string name="imageBerat">Gambar Berat Badan</string>
-    <string name="imageGender">Gambar Jenis Kelamin</string>
-    <string name="title_questions1">Pertanyaan ke 1 dari 3</string>
-    <string name="title_questions2">Pertanyaan ke 2 dari 3</string>
-    <string name="title_questions3">Pertanyaan ke 3 dari 3</string>
-    <string name="question1">Apa jenis kelamin anda?</string>
-    <string name="question2">Berapa tinggi badan anda?</string>
-    <string name="question3">Berapa berat badan anda?</string>
-    <string name="men">Pria</string>
-    <string name="women">Wanita</string>
-    <string name="next">Lanjut</string>
-    <string name="tinggi_hint">Masukan tinggi anda disini</string>
-    <string name="berat_hint">Masukan berat anda disini</string>
-    <string name="cm">cm</string>
-    <string name="kg">kg</string>
+    <string name="Body">Body Classifier</string>
+    <string name="take_selfie">Take a Selfie or Upload Your Full Body Image</string>
+    <string name="selfie">Take a Selfie</string>
+    <string name="upload">Upload a Photo</string>
+    <string name="classify">Classify your body based on your image</string>
+    <string name="correct">Correct Example</string>
+    <string name="wrong">Wrong Example</string>
+    <string name="summary">Summary of Your Body Type</string>
+    <string name="summarys">Summary of Your Fitness Level</string>
+    <string name="mesophorm">Mesomorph</string>
+    <string name="number">1/3</string>
+    <string name="numbers">2/3</string>
+    <string name="numberss">3/3</string>
+    <string name="calculate">Menghitung BMI dan BMR Anda</string>
+    <string name="select">Silahkan mengisi kolom berikut</string>
+    <string name="eat_habits">Pola Hidup</string>
+    <string name="tujuan">Fokus</string>
+    <string name="selects">Silakan mengisi sesuai dengan aktivitas sehari-hari </string>
+    <string name="selectss">Silakan mengisi sesuai dengan tujuan diri </string>
+    <string name="bodyindex">Your Body Mass Index \n (BMI)</string>
+    <string name="result">Normal - </string>
+    <string name="exercise">Tingkat Olahraga</string>
+    <string name="activity">Rencana Penurunan Berat Badan</string>
+    <string name="generate">Generate Recommendation</string>
+    <string name="tiga">3</string>
+    <string name="empat">4</string>
+    <string name="lima">5</string>
+    <string name="Aktivitas">Aktivitas</string>
+    <string name="rencana">Rencana Penurunan Berat Badan</string>
+    <string name="sedikit">Saya tidak/sedikit berolahraga</string>
+    <string name="ringan">Saya berolahraga ringan</string>
+    <string name="sedang">Saya berolahraga sedang (3-5 kali/minggu)</string>
+    <string name="aktif">Saya sangat aktif berolahraga (6-7 kali/minggu)</string>
+    <string name="berat">Saya ekstra aktif berolahraga (sangat aktif &amp; pekerjaan fisik)</string>
+    <string name="ringa">Pertahankan berat badan</string>
+    <string name="moderat">Penurunan berat badan ringan</string>
+    <string name="moderats">Penurunan berat badan sedang</string>
+    <string name="berats">Penurunan berat badan ekstrem</string>
+    <string name="jumlah">Jumlah Makan per Hari</string>
+    <string name="ecto">Ectomorph</string>
+    <string name="meso">Mesomorph</string>
+    <string name="endo">Endomorph</string>
 
     <!--Result-->
     <string name="rekomendasi">Rekomendasi</string>
-    <string name="rekomendasi_olahraga">Olahraga</string>
+    <string name="rekomendasi_olahraga">yoga</string>
+    <string name="rekomendasi_olahragas">yoga</string>
     <string name="rekomendasi_makanan">Makanan</string>
     <string name="deskripsi_olahraga">Olahraga ini dapat membantu mengurangi lemak di tubuh, dan mampu membuat  badan sehat.</string>
     <string name="deskripsi_makanan">Memakan buah-buahan mampu meningkatkan kesehatan tubuh, merupakan sumber vitamin, dan Mencegah penyakit tertentu</string>
@@ -124,13 +161,33 @@
     <string name="sign_in_">Already on RoadToFit? </string>
     <string name="name">Name</string>
     <string name="sign_up_btn">Sign Up</string>
-    <string name="sign_in_text">Sign In</string>
+    <string name="sign_in_text">Sign in to RoadToFit Account</string>
     <string name="dummytext">Nikolaus Evan Dewanto</string>
     <string name="dummy_gender">Male</string>
     <string name="profile_data">Profile Data</string>
-    <string name="age">Age</string>
     <string name="nothing">Nothing</string>
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="bmi_result">%.2f</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="body_type_classifier">Endomorph</string>
+    <string name="rekomendasi_diet">Rekomendasi Diet</string>
+    <string name="rekomendasii">Rekomendasi Olahraga</string>
+    <string name="selengkapnya">Selengkapnya</string>
+    <string name="food">Food</string>
+    <string name="makanan">Makaroni atau Mie dengan Keju (Campuran Kering); Ayam (Kulit tidak Dimakan); </string>
+    <string name="jumlah_kalori">513 cal (per 100g)</string>
+    <string name="jumlah_exercise">150 cal</string>
+    <string name="jumlah_exercises">200 cal</string>
+    <string name="tvHasil_bmi">Hasil BMI:</string>
+    <string name="nominal_bmi">22.49</string>
+    <string name="member">member</string>
+    <string name="foto_profil">Foto Profil</string>
+    <string name="profile">Profile</string>
+    <string name="nama">Nama</string>
+    <string name="masukkan_gambar">Masukkan Gambar</string>
+    <string name="simpan">Simpan</string>
+    <string name="tingkat">Ringan</string>
+    <string name="rencanan">Penurunan Berat Badan Ringan</string>
+
 
 </resources>
